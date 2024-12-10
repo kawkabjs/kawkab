@@ -13,7 +13,7 @@ A powerful Node.js/TypeScript framework for building scalable backend applicatio
 ## Installation
 
 ```bash
-npx create-kawkap init my-kawkap-app
+npx create-kawkab-app@latest init my-kawkab-app
 ```
 
 ## Quick Start
