@@ -1,0 +1,9 @@
+export class Middleware {
+    middleware() {
+        return {
+            get: () => {
+                // Type code here
+            },
+        };
+    }
+}

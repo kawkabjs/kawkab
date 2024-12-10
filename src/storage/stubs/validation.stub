@@ -1,0 +1,9 @@
+import { BaseValidation, rule as r } from "kawkab";
+
+export class <ClassName>Validation extends BaseValidation {
+    rules() {
+        return {
+            name: r.string(),
+        }
+    }
+}

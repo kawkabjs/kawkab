@@ -1,0 +1,5 @@
+import { BaseModel } from "kawkab";
+
+export class <ClassName> extends BaseModel {
+
+}

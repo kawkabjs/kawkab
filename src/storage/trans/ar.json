@@ -1,0 +1,109 @@
+{
+    "plugins": {
+      "validation": {
+        "errors": {
+          "invalid_type": "المتوقع :expected، المستلم :received",
+          "invalid_type_received_undefined": "مطلوب",
+          "invalid_type_received_null": "مطلوب",
+          "invalid_literal": "قيمة حرفية غير صالحة، المتوقع :expected",
+          "unrecognized_keys": "مفتاح(مفاتيح) غير معترف بها في الكائن: :keys",
+          "invalid_union": "إدخال غير صالح",
+          "invalid_union_discriminator": "قيمة مميز غير صالحة. المتوقع :options",
+          "invalid_enum_value": "قيمة تعداد غير صالحة. المتوقع :options، المستلم :received",
+          "invalid_arguments": "وسائط دالة غير صالحة",
+          "invalid_return_type": "نوع إرجاع دالة غير صالح",
+          "invalid_date": "تاريخ غير صالح",
+          "custom": "إدخال غير صالح",
+          "invalid_intersection_types": "لا يمكن دمج نتائج التقاطع",
+          "not_multiple_of": "يجب أن يكون الرقم مضاعفًا لـ :multipleOf",
+          "not_finite": "يجب أن يكون الرقم محدودًا",
+          "invalid_string": {
+            "email": ":validation غير صالح",
+            "url": ":validation غير صالح",
+            "uuid": ":validation غير صالح",
+            "cuid": ":validation غير صالح",
+            "regex": ":validation غير صالح",
+            "datetime": ":validation غير صالح",
+            "startsWith": "إدخال غير صالح: يجب أن يبدأ بـ :startsWith",
+            "endsWith": "إدخال غير صالح: يجب أن ينتهي بـ :endsWith"
+          },
+          "too_small": {
+            "array": {
+              "exact": "يجب أن يحتوي المصفوفة على :minimum عنصر(عناصر) بالضبط",
+              "inclusive": "يجب أن يحتوي المصفوفة على الأقل :minimum عنصر(عناصر)",
+              "not_inclusive": "يجب أن يحتوي المصفوفة على أكثر من :minimum عنصر(عناصر)"
+            },
+            "string": {
+              "exact": "يجب أن يحتوي النص على :minimum حرف(حروف) بالضبط",
+              "inclusive": "يجب أن يحتوي النص على الأقل :minimum حرف(حروف)",
+              "not_inclusive": "يجب أن يحتوي النص على أكثر من :minimum حرف(حروف)"
+            },
+            "number": {
+              "exact": "يجب أن يكون الرقم بالضبط :minimum",
+              "inclusive": "يجب أن يكون الرقم أكبر من أو يساوي :minimum",
+              "not_inclusive": "يجب أن يكون الرقم أكبر من :minimum"
+            },
+            "set": {
+              "exact": "إدخال غير صالح",
+              "inclusive": "إدخال غير صالح",
+              "not_inclusive": "إدخال غير صالح"
+            },
+            "date": {
+              "exact": "يجب أن يكون التاريخ :minimum، :datetime",
+              "inclusive": "يجب أن يكون التاريخ أكبر من أو يساوي :minimum، :datetime",
+              "not_inclusive": "يجب أن يكون التاريخ أكبر من :minimum، :datetime"
+            }
+          },
+          "too_big": {
+            "array": {
+              "exact": "يجب أن يحتوي المصفوفة على :maximum عنصر(عناصر) بالضبط",
+              "inclusive": "يجب أن يحتوي المصفوفة على الأكثر :maximum عنصر(عناصر)",
+              "not_inclusive": "يجب أن يحتوي المصفوفة على أقل من :maximum عنصر(عناصر)"
+            },
+            "string": {
+              "exact": "يجب أن يحتوي النص على :maximum حرف(حروف) بالضبط",
+              "inclusive": "يجب أن يحتوي النص على الأكثر :maximum حرف(حروف)",
+              "not_inclusive": "يجب أن يحتوي النص على أقل من :maximum حرف(حروف)"
+            },
+            "number": {
+              "exact": "يجب أن يكون الرقم بالضبط :maximum",
+              "inclusive": "يجب أن يكون الرقم أقل من أو يساوي :maximum",
+              "not_inclusive": "يجب أن يكون الرقم أقل من :maximum"
+            },
+            "set": {
+              "exact": "إدخال غير صالح",
+              "inclusive": "إدخال غير صالح",
+              "not_inclusive": "إدخال غير صالح"
+            },
+            "date": {
+              "exact": "يجب أن يكون التاريخ :maximum، datetime",
+              "inclusive": "يجب أن يكون التاريخ أصغر من أو يساوي :maximum، datetime",
+              "not_inclusive": "يجب أن يكون التاريخ أصغر من :maximum، datetime"
+            }
+          }
+        },
+        "types": {
+          "function": "دالة",
+          "number": "رقم",
+          "string": "نص",
+          "nan": "نان",
+          "integer": "عدد صحيح",
+          "float": "عدد عشري",
+          "boolean": "منطقي",
+          "date": "تاريخ",
+          "bigint": "عدد كبير",
+          "undefined": "غير معرف",
+          "symbol": "رمز",
+          "null": "فارغ",
+          "array": "مصفوفة",
+          "object": "كائن",
+          "unknown": "غير معروف",
+          "promise": "وعد",
+          "void": "فارغ",
+          "never": "أبدًا",
+          "map": "خريطة",
+          "set": "مجموعة"
+        }
+      }
+    }
+  }

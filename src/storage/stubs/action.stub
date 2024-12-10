@@ -1,0 +1,7 @@
+import { BaseAction } from "kawkab";
+
+export class <ClassName>Action extends BaseAction {
+    handle() {
+        // Add code here
+    }
+}

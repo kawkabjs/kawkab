@@ -1,0 +1,9 @@
+import { BaseController, inherit } from "kawkab";
+
+export default class extends inherit(BaseController) {
+    async get() {
+        return {
+            "status": true,
+        };
+    }
+}

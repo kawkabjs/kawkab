@@ -1,0 +1,11 @@
+export async function up(db: any) {
+  await db.schema.createTable('<TableName>', (column:any) => {
+    column.increments('id').primary();
+    // Add more columns here
+    column.timestamps()
+  });
+}
+
+export async function down(db: any) {
+  await db.schema.dropTable('<TableName>')
+}

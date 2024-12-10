@@ -1,0 +1,9 @@
+import { BaseResource } from "kawkab";
+
+export class <ClassName>Resource extends BaseResource {
+    public resource() {
+        return {
+            id: this.data.id,
+        };
+    }
+}

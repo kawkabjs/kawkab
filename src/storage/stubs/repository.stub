@@ -1,0 +1,7 @@
+import { BaseRepository, Inject, inherit } from "kawkab";
+
+export class <ClassName>Repository extends inherit(BaseRepository, Inject) {
+    findById() {
+        // Add code here
+    }
+}

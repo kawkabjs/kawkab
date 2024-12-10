@@ -1,0 +1,5 @@
+{
+  "watch": ["index.ts", "cli.ts", ".env.development", ".env.production", ".env.example", "app"],
+  "ext": "ts",
+  "exec": "cross-env NODE_NO_WARNINGS=1 cross-env NODE_ENV=development ts-node index.ts"
+}

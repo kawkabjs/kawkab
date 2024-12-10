@@ -1,0 +1,1 @@
+export { collect as Collect } from 'collect.js';

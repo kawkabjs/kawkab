@@ -1,0 +1,19 @@
+import { BaseJob } from 'kawkab';
+
+export class <ClassName>Job extends BaseJob {
+  name(): string {
+    return '<ClassName>';
+  }
+
+  attempts(): number {
+    return 3;
+  }
+
+  delay(): number {
+    return 5000;
+  }
+
+  async handle(data: any = {}) {
+    console.log('Processing job:', data);
+  }
+}

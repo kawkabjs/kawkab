@@ -1,0 +1,8 @@
+import { IStrategy } from './IStrategy';
+import { StrategyA } from './StrategyA';
+
+export class <ClassName>Strategy {
+    static StrategyA(): IStrategy {
+        return new StrategyA();
+    }
+}

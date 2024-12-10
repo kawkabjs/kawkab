@@ -1,0 +1,10 @@
+import { BaseEnum as Enum } from "kawkab";
+
+export enum <EnumName>Enum {
+    Key = 'value',
+    // Add your enum values here
+}
+
+Enum.set(<EnumName>Enum); 
+
+export class <EnumName> extends Enum<typeof <EnumName>Enum> {}

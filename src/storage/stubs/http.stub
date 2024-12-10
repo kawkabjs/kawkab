@@ -1,0 +1,41 @@
+import { BaseHttp, HttpMethodEnum } from "kawkab";
+
+export class <ClassName>HttpRequest extends BaseHttp {
+  baseUrl(): string {
+    return ""
+  }
+
+  url(): string {
+    return "/"
+  }
+
+  method(): HttpMethodEnum {
+    return HttpMethodEnum.GET
+  }
+
+  headers(): Record<string, string | string[]> {
+    return {
+      "Content-Type": "application/json",
+    }
+  }
+
+  body(): any {
+    return {}
+  }
+
+  asForm(): boolean {
+    return false
+  }
+
+  then(response: any) {
+    return response
+  }
+
+  catch(error: any) {
+    console.log(error)
+  }
+
+  finally() {
+    // ...
+  }
+}

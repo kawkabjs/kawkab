@@ -1,0 +1,28 @@
+import { BaseDTO, rule as r, req } from "kawkab";
+
+export interface Item {
+    [key: string]: any;
+}
+
+export class <ClassName>DTO extends BaseDTO {
+    constructor(data: Item=req.inputs()) {
+        super()
+        this.dto(this, data)
+    }
+    
+    static inject(data: Item=req.inputs()){
+        return {...new this(data)};
+    }
+
+    data(i: Item): object {
+        return {
+            email: i?.email,
+        };
+    }
+
+    rules() {
+        return {
+            email: r.string().email(),
+        };
+    }
+}

@@ -1,0 +1,7 @@
+import { BaseService, Inject, inherit } from "kawkab";
+
+export class <ClassName>Service extends inherit(BaseService, Inject) {
+    findById() {
+        // Add code here
+    }
+}

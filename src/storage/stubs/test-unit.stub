@@ -1,0 +1,16 @@
+describe('Basic Math Tests', () => {
+  it('should return 2 when adding 1 + 1', () => {
+    const result = 1 + 1;
+    expect(result).toBe(2);
+  });
+
+  it('should return 4 when multiplying 2 * 2', () => {
+    const result = 2 * 2;
+    expect(result).toBe(4);
+  });
+
+  it('should return 0 when subtracting 1 - 1', () => {
+    const result = 1 - 1;
+    expect(result).toBe(0);
+  });
+});

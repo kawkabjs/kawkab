@@ -1,0 +1,13 @@
+import { Command } from "kawkab";
+
+export default function(program: Command): void {
+  program
+    // The command syntax: '<variable_name>' is required, '[variable_name]' is optional
+    .command("hello <name> [module]")
+    // Description for the command that will appear in the CLI help.
+    .description("Say hello")
+    // Action to be executed when the command is run.
+    .action(async (name: string, module: string = "main") => {
+      console.log(`hello ${name}`);
+    });
+}

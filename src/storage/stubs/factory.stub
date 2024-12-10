@@ -1,0 +1,13 @@
+import { BaseFactory, faker } from 'kawkab';
+// import { User } from "../models/user";
+
+export class <ClassName>Factory extends BaseFactory {
+    async handle() {
+        const data = {
+            username: faker.internet.username,
+            email: faker.internet.email(),
+        };
+
+        // await User.query().insert(data);
+    }
+}

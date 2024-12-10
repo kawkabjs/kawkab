@@ -1,0 +1,7 @@
+import { IStrategy } from './IStrategy';
+
+export class StrategyA implements IStrategy {
+  execute(): void {
+    console.log('Strategy A');
+  }
+}

@@ -1,0 +1,7 @@
+import { BaseMiddleware } from "kawkab";
+
+export class <ClassName>Middleware extends BaseMiddleware {
+    handle() {
+        // Add code here
+    }
+}

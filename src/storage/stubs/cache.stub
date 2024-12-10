@@ -1,0 +1,13 @@
+import { BaseCache } from "kawkab";
+
+export class <ClassName>Cache extends BaseCache {
+    static key(): string {
+        return "<ItemName>"
+    }
+
+    static handle() {
+        return {
+            name: "kawkab"
+        }
+    }
+}

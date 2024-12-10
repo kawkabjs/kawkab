@@ -1,0 +1,43 @@
+describe('User Registration Flow', () => {
+  it('should successfully register a user with valid data', async () => {
+    const user = { username: 'new_user', email: 'newuser@example.com' };
+
+    // Simulate the registration process (this could be a function call to your app)
+    const response = await registerUser(user);
+
+    expect(response.status).toBe(true);
+    expect(response.user).toBeDefined();
+  });
+
+  it('should return an error for missing username', async () => {
+    const user = { email: 'newuser@example.com' };
+
+    const response = await registerUser(user);
+
+    expect(response.status).toBe(false);
+    expect(response.error).toBe('Username is required');
+  });
+
+  it('should return an error for invalid email', async () => {
+    const user = { username: 'new_user', email: 'invalid-email' };
+
+    const response = await registerUser(user);
+
+    expect(response.status).toBe(false);
+    expect(response.error).toBe('Invalid email format');
+  });
+});
+
+// Simulated registerUser function (replace with your actual logic)
+async function registerUser(user: { username?: string, email?: string }) {
+  if (!user.username) {
+    return { status: false, error: 'Username is required' };
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(user.email || '')) {
+    return { status: false, error: 'Invalid email format' };
+  }
+
+  return { status: true, user };
+}

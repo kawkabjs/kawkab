@@ -1,0 +1,15 @@
+import { swagger } from "kawkab";
+
+export class Docs {
+    docs() {
+        return {
+            get: () => {
+                return swagger
+                    .tag("tag")
+                    .title("title")
+                    .desc("desc")
+                    .build();
+            },
+        };
+    }
+}

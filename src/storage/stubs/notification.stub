@@ -1,0 +1,15 @@
+import { BaseNotification, mail } from "kawkab";
+
+export class <ClassName>Notification extends BaseNotification {
+  static async via() {
+    await this.email();
+  }
+
+  static async email() {
+    await mail.send({
+      to: this.data.email,
+      subject: "Hello!",
+      body: "This is a plain text body.",
+    });
+  }
+}
