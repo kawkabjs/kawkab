@@ -3,3 +3,5 @@ src/
 tools/
 .git/
 *.log
+tsconfig.json
+nodemon.json
