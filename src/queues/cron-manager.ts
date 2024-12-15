@@ -123,8 +123,6 @@ export class CronManager {
      * @param {string} directoryPath - The path to the directory
      */
     public async load(directoryPath: string): Promise<void> {
-        console.log(`Loading cron jobs from directory: ${directoryPath}`);
-        
         try {
             await access(directoryPath, fs.constants.R_OK);
             const files = await this.getAllFiles(directoryPath);

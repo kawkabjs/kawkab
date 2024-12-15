@@ -7,7 +7,6 @@ export function MigrateCommand(program: Command): void {
     .description('Run database migrations')
     .action(async () => {
       const db: any = MigrationEngine.getConnection();
-      console.log(MigrationEngine.migrations);
       
       if(MigrationEngine.knex === null || MigrationEngine.migrations.length === 0) {
         console.log('👉 No migrations found');

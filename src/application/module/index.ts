@@ -63,8 +63,11 @@ export class Module {
     trans.load(['./app/' + module.name + '/' + module.trans]);
     event.load([path.join(module.path, module.events)]);
     commander.load([path.join(module.path, module.commands)]);
-    cron.load(path.join(module.path, module.cron));
     db.load([module.database_migration], [module.database_seeds]);
+
+    if(process.env.NODE_ENV != 'cli'){
+      cron.load(path.join(module.path, module.cron));
+    }
   }
 
   static router() {}
