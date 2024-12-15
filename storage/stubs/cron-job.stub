@@ -1,0 +1,38 @@
+import { BaseCronJob, CronJobDayOfWeekEnum } from 'kawkab';
+
+export default class extends BaseCronJob {
+    // Method to check if the cron job is enabled or not
+    isEnabled(): boolean {
+        return true;  // This cron job is enabled and will run
+    }
+
+    // Method to set the minute when the job will run
+    minute(): number|string {
+        return '*';  // The job will run every minute
+    }
+
+    // Method to set the hour when the job will run
+    hour(): number|string {
+        return '*';  // The job will run every hour
+    }
+
+    // Method to set the day of the month when the job will run
+    dayOfMonth(): number|string {
+        return '*';  // The job will run every day of the month
+    }
+
+    // Method to set the month when the job will run
+    month(): number|string {
+        return '*';  // The job will run every month
+    }
+
+    // Method to set the day of the week when the job will run
+    dayOfWeek(): number|string {
+        return '*';  // The job will run every day of the week
+    }
+
+    // This is the main method that will execute the job logic
+    async handle(): Promise<void> {
+        console.log("Cron Job is running...");  // Logs a message when the cron job runs
+    }
+}

@@ -34,6 +34,7 @@ import { CommandCommand } from '../commands/command';
 import { MigrationFreshCommand } from '../commands/migration-fresh';
 import { FactoryCommand } from '../commands/factory';
 import { JobCommand } from '../commands/job';
+import { CronJobCommand } from '../commands/cron-job';
 
 class Commander {
   private dirs: string[] = [];
@@ -157,6 +158,7 @@ class Commander {
       CommandCommand,
       FactoryCommand,
       JobCommand,
+      CronJobCommand,
     ];
 
     // Filter out commands that would be duplicates

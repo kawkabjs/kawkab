@@ -7,7 +7,7 @@ export function FactoryCommand(program: Command): void {
     .command('factory:make <name> [module]')
     .description('Create a new Factory class')
     .action(async (name: string, module: string = 'main') => {
-      const content = fs.readFileSync(`${__dirname}/../../storage/stubs/factory.stub`);
+      const content = fs.readFileSync(`${__dirname}/../../../storage/stubs/factory.stub`);
 
       stub(`app/${module.toLowerCase()}/factories/${name.toLowerCase()}.ts`, content.toString(), [
         { var: 'ClassName', value: name.replace(/^\w/, c => c.toUpperCase()) }

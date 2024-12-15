@@ -8,7 +8,7 @@ export function TestIntegrationCommand(program: Command): void {
     .description('Create a new integration test')
     .action(async (name: string, module: string = 'main') => {
       const content = fs.readFileSync(
-        `${__dirname}/../../storage/stubs/test-integration.stub`
+        `${__dirname}/../../../storage/stubs/test-integration.stub`
       );
 
       stub(

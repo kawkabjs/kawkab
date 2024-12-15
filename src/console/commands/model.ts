@@ -7,7 +7,7 @@ export function ModelCommand(program: Command): void {
     .command('model:make <name> [module]')
     .description('Create a new model')
     .action(async (name: string, module: string = 'main') => {
-      const content = fs.readFileSync(`${__dirname}/../../storage/stubs/model.stub`);
+      const content = fs.readFileSync(`${__dirname}/../../../storage/stubs/model.stub`);
 
       stub(`app/${module.toLowerCase()}/models/${name.toLowerCase()}.ts`, content.toString(), [
         { var: 'ClassName', value: name.replace(/^\w/, c => c.toUpperCase()) }

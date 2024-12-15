@@ -8,7 +8,7 @@ export function DataCommand(program: Command): void {
     .command('data:make <name> [module]')
     .description('Create a new data file')
     .action(async (name: string, module: string = 'main') => {
-      const content = fs.readFileSync(`${__dirname}/../../storage/stubs/data.stub`);
+      const content = fs.readFileSync(`${__dirname}/../../../storage/stubs/data.stub`);
 
       stub(`app/${module.toLowerCase()}/data/${name.toLowerCase()}.ts`, content.toString());
 

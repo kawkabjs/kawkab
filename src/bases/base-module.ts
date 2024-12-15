@@ -19,8 +19,8 @@ export class BaseModule {
 
   boot() {}
 
-  module(instance: object, path: string) {        
-    Module.set({
+  async module(instance: object, path: string) {        
+    await Module.set({
       name: this.name(),
       instance: instance,
       path: path,

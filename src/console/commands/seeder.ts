@@ -9,7 +9,7 @@ export function SeederCommand(program: Command): void {
     .action(async (name: string, module: string = 'main') => {
       const timestamp = new Date().toISOString().replace(/[-:.TZ]/g, '');
       const fileName = `${timestamp}_${name.toLowerCase()}.ts`;
-      const content = fs.readFileSync(`${__dirname}/../../storage/stubs/seed.stub`);
+      const content = fs.readFileSync(`${__dirname}/../../../storage/stubs/seed.stub`);
 
       stub(`app/${module.toLowerCase()}/seeds/${fileName}`, content.toString(), [
         { var: 'ItemName', value: name.replace(/^\w/, c => c.toUpperCase()) }

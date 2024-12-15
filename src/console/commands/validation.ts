@@ -8,7 +8,7 @@ export function ValidationCommand(program: Command): void {
     .description('Create a new validation')
     .action(async (name: string, module: string = 'main') => {
       
-      const content = fs.readFileSync(`${__dirname}/../../storage/stubs/validation.stub`);
+      const content = fs.readFileSync(`${__dirname}/../../../storage/stubs/validation.stub`);
 
       stub(`app/${module.toLowerCase()}/validation/${name.toLowerCase()}.ts`, content.toString(), [
         { var: 'ClassName', value: name.replace(/^\w/, c => c.toUpperCase()) }

@@ -8,7 +8,7 @@ export function SettingCommand(program: Command): void {
     .command('setting:make <name> [module]')
     .description('Create a new setting file')
     .action(async (name: string, module: string='main') => {
-      const content = fs.readFileSync(`${__dirname}/../../storage/stubs/setting.stub`);
+      const content = fs.readFileSync(`${__dirname}/../../../storage/stubs/setting.stub`);
 
       stub(`app/${module.toLowerCase()}/settings/${name.toLowerCase()}.ts`, content.toString());
 

@@ -7,7 +7,7 @@ export function ActionCommand(program: Command): void {
     .command('action:make <name> [module]')
     .description('Create a new action')
     .action(async (name: string, module: string = 'main') => {
-      const content = fs.readFileSync(`${__dirname}/../../storage/stubs/action.stub`);
+      const content = fs.readFileSync(`${__dirname}/../../../storage/stubs/action.stub`);
 
       stub(`app/${module.toLowerCase()}/actions/${name.toLowerCase()}.ts`, content.toString(), [
         { var: 'ClassName', value: name.replace(/^\w/, c => c.toUpperCase()) }

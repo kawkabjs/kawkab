@@ -8,7 +8,7 @@ export function EventCommand(program: Command): void {
     .description('Create a new event')
     .action(async (name: string, event: string, module: string = 'main') => {
       const content = fs.readFileSync(
-        `${__dirname}/../../storage/stubs/event.stub`
+        `${__dirname}/../../../storage/stubs/event.stub`
       );
 
       stub(

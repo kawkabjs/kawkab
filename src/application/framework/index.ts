@@ -38,6 +38,7 @@ import { Time } from "../../time";
 import { JWT } from "../../security/jwt";
 import { faker as Faker } from "@faker-js/faker";
 import { JobQueue } from "../../queues/job-queue";
+import { CronManager } from "../../queues/cron-manager";
 
 type ConfigFramework = {
   app: {
@@ -402,6 +403,10 @@ export class Framework {
     return JobQueue;
   }
 
+  public cron() {
+    return new CronManager();
+  }
+
   public cache() {
     return this.cacheInstance;
   }
@@ -535,7 +540,7 @@ export class Framework {
       this.transInstance = new Trans();
     }
 
-    this.transInstance.load([path.join(__dirname, "../../storage/trans")]);
+    this.transInstance.load([path.join(__dirname, "../../../storage/trans")]);
 
     if (this?.config?.locale.default) {
       const locale = (this?.config?.locale.default || "en").trim();

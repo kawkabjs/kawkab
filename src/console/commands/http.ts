@@ -8,7 +8,7 @@ export function HttpCommand(program: Command): void {
     .description('Create a new http request')
     .action(async (name: string, module: string = 'main') => {
       const content = fs.readFileSync(
-        `${__dirname}/../../storage/stubs/http.stub`
+        `${__dirname}/../../../storage/stubs/http.stub`
       );
 
       stub(

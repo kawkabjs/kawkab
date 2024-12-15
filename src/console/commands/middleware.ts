@@ -8,7 +8,7 @@ export function MiddlewareCommand(program: Command): void {
     .description('Create a new middleware')
     .action(async (name: string, module: string = 'main') => {
       const content = fs.readFileSync(
-        `${__dirname}/../../storage/stubs/middleware.stub`
+        `${__dirname}/../../../storage/stubs/middleware.stub`
       );
 
       stub(

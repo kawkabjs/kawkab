@@ -15,12 +15,11 @@ import { BaseResource } from './bases/base-resource';
 import { PasswordCastAttribute } from './databases/casts/password';
 import { BaseCache } from './bases/base-cache';
 import { BaseNotification } from './bases/base-notifications';
-
-// Types
-import { BaseHttp, HttpMethodEnum } from './bases/base-http';
-import { Command } from './console/commander';
 import { BaseFactory } from './bases/base-factory';
 import { BaseJob } from './bases/base-job';
+import { BaseCronJob, CronJobDayOfWeekEnum } from './bases/base-cron-job';
+import { Command } from './console/commander';
+import { BaseHttp, HttpMethodEnum } from './bases/base-http';
 
 // Application
 const framework = new Framework();
@@ -75,6 +74,7 @@ const time = framework.time();
 
 // Job Queue
 const jobQueue = framework.jobQueue();
+const cron = framework.cron();
 
 // Locale
 const trans = framework.trans();
@@ -151,6 +151,7 @@ export {
 
   // Job Queue
   jobQueue,
+  cron,
 
   // Locale
   trans,
@@ -185,10 +186,12 @@ export {
   BaseNotification,
   BaseFactory,
   BaseJob,
+  BaseCronJob,
 
-  // Types
+  // Enums
   HttpMethodEnum,
-
+  CronJobDayOfWeekEnum,
+  
   // Casts Attributes
   PasswordCastAttribute,
 

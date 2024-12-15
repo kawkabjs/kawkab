@@ -14,8 +14,8 @@ export function TransCommand(program: Command): void {
       
       // Define the path to the appropriate stub file based on the type
       const stubPath = type === 'json'
-        ? `${__dirname}/../../storage/stubs/trans-json.stub`
-        : `${__dirname}/../../storage/stubs/trans-ts.stub`;
+        ? `${__dirname}/../../../storage/stubs/trans-json.stub`
+        : `${__dirname}/../../../storage/stubs/trans-ts.stub`;
 
       // Read the content of the stub file
       let content: string = fs.readFileSync(stubPath, 'utf-8');

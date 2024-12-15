@@ -8,7 +8,7 @@ export function NotificationCommand(program: Command): void {
     .description('Create a new notification')
     .action(async (name: string, module: string = 'main') => {
       const content = fs.readFileSync(
-        `${__dirname}/../../storage/stubs/notification.stub`
+        `${__dirname}/../../../storage/stubs/notification.stub`
       );
 
       stub(

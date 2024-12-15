@@ -281,7 +281,7 @@ export class Server {
 
     return new ServeStatic([
       process.cwd() + '/storage/public',
-      path.join(__dirname, '../../storage/public'),
+      path.join(__dirname, '../../../storage/public'),
     ]).server(req, res);
   }
 

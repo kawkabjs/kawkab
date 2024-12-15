@@ -10,8 +10,8 @@ export function ConfigCommand(program: Command): void {
       async (name: string, type: string = 'json', module: string = 'main') => {
         const stubPath =
           type === 'json'
-            ? `${__dirname}/../../storage/stubs/config-json.stub`
-            : `${__dirname}/../../storage/stubs/config-ts.stub`;
+            ? `${__dirname}/../../../storage/stubs/config-json.stub`
+            : `${__dirname}/../../../storage/stubs/config-ts.stub`;
 
         let content: string = fs.readFileSync(stubPath, 'utf-8');
 

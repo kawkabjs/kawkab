@@ -8,7 +8,7 @@ export function CommandCommand(program: Command): void {
     .description('Create a new command')
     .action(async (name: string, module: string = 'main') => {
       const content = fs.readFileSync(
-        `${__dirname}/../../storage/stubs/command.stub`
+        `${__dirname}/../../../storage/stubs/command.stub`
       );
 
       stub(

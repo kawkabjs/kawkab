@@ -7,7 +7,7 @@ export function EnumCommand(program: Command): void {
     .command('enum:make <name> [module]')
     .description('Create a new enum file')
     .action(async (name: string, module: string = 'main') => {
-      const content = fs.readFileSync(`${__dirname}/../../storage/stubs/enum.stub`);
+      const content = fs.readFileSync(`${__dirname}/../../../storage/stubs/enum.stub`);
 
       stub(`app/${module.toLowerCase()}/enums/${name}.ts`, content.toString(), [
         { var: 'EnumName', value: name }

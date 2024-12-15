@@ -8,7 +8,7 @@ export function TestUnitCommand(program: Command): void {
     .description('Create a new unit test')
     .action(async (name: string, module: string = 'main') => {
       const content = fs.readFileSync(
-        `${__dirname}/../../storage/stubs/test-unit.stub`
+        `${__dirname}/../../../storage/stubs/test-unit.stub`
       );
 
       stub(

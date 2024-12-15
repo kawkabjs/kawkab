@@ -7,7 +7,7 @@ export function CacheCommand(program: Command): void {
     .command('cache:make <name> [module]')
     .description('Create a new cache class')
     .action(async (name: string, module: string = 'main') => {
-      const content = fs.readFileSync(`${__dirname}/../../storage/stubs/cache.stub`);
+      const content = fs.readFileSync(`${__dirname}/../../../storage/stubs/cache.stub`);
 
       stub(`app/${module.toLowerCase()}/cache/${name.toLowerCase()}.ts`, content.toString(), [
         { var: 'ClassName', value: `${name.charAt(0).toUpperCase() + name.slice(1)}`, },

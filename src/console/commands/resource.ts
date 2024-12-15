@@ -11,7 +11,7 @@ export function ResourceCommand(program: Command): void {
     .command('resource:make <name> [module]')
     .description('Create a new resources')
     .action(async (name: string, module: string = 'main') => {
-      const content = fs.readFileSync(`${__dirname}/../../storage/stubs/resource.stub`);
+      const content = fs.readFileSync(`${__dirname}/../../../storage/stubs/resource.stub`);
 
       stub(`app/${module.toLowerCase()}/resources/${name.toLowerCase()}.ts`, content.toString(), [
         {var: 'ClassName', value: capitalizeFirstLetter(name)}

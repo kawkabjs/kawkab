@@ -8,7 +8,7 @@ export function JobCommand(program: Command): void {
     .description('Create a new job')
     .action(async (name: string, module: string = 'main') => {
       const content = fs.readFileSync(
-        `${__dirname}/../../storage/stubs/job.stub`
+        `${__dirname}/../../../storage/stubs/job.stub`
       );
 
       stub(

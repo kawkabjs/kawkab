@@ -9,7 +9,7 @@ export function MigrationCommand(program: Command): void {
     .action(async (name: string, module: string = 'main') => {
       const timestamp = new Date().toISOString().replace(/[-:.TZ]/g, '');
       const fileName = `${timestamp}_${name.toLowerCase()}.ts`;
-      const content = fs.readFileSync(`${__dirname}/../../storage/stubs/migration.stub`);
+      const content = fs.readFileSync(`${__dirname}/../../../storage/stubs/migration.stub`);
 
       stub(`app/${module.toLowerCase()}/migrations/${fileName}`, content.toString(), [
         { var: 'TableName', value: name.replace(/^\w/, c => c.toLowerCase()) }

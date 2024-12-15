@@ -9,7 +9,7 @@ export function ControllerCommand(program: Command): void {
     .action(async (path: string = '/', module: string = 'main') => {
 
       // Controller 
-      const content = fs.readFileSync(`${__dirname}/../../storage/stubs/controller.stub`);
+      const content = fs.readFileSync(`${__dirname}/../../../storage/stubs/controller.stub`);
       stub(`app/${module.toLowerCase()}/controllers/${path.toLowerCase()}/index.ts`, content.toString());
       console.log(`🆗 Controller created successfully in module '${module.toLowerCase()}'.\n`);
 

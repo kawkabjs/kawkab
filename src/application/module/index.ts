@@ -1,4 +1,4 @@
-import { commander, config, db, event, trans } from '../..';
+import { commander, config, db, event, trans, cron } from '../..';
 import * as path from 'path';
 
 export interface IModule {
@@ -12,6 +12,7 @@ export interface IModule {
   database_migration?: string;
   database_seeds?: string;
   commands?: string;
+  cron?: string;
 }
 
 export class Module {
@@ -33,13 +34,14 @@ export class Module {
     return this.modules;
   }
 
-  static set(module: IModule): void {
+  static async set(module: IModule): Promise<void> {
     module.instance = module.instance;
     module.controllers = module.controllers ?? 'controllers';
     module.config = module.config ?? 'config';
     module.trans = module.trans ?? 'trans';
     module.events = module.events ?? 'events';
     module.commands = module.commands ?? 'commands';
+    module.cron = module.cron ?? 'cron';
     module.database_migration = path.join(
       module.path,
       module.database_migration ?? 'migrations'
@@ -53,14 +55,15 @@ export class Module {
       this.modules.push(module);
     }
 
-    this.integrate(module);
+    await this.integrate(module);
   }
 
-  static integrate(module: any) {
+  static async integrate(module: any) {
     config.load(['./app/' + module.name + '/' + module.config]);
     trans.load(['./app/' + module.name + '/' + module.trans]);
     event.load([path.join(module.path, module.events)]);
     commander.load([path.join(module.path, module.commands)]);
+    cron.load(path.join(module.path, module.cron));
     db.load([module.database_migration], [module.database_seeds]);
   }
 

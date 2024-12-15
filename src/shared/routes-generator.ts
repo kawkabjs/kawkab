@@ -36,7 +36,7 @@ export class RoutesGenerator {
   // Recursively get all 'index.js' files from the directories
   private async getAllIndexFiles(): Promise<string[]> {
     const files = await Promise.all(
-      this.patterns.map((pattern) => fg(`${pattern.replace(/\\/g, '/')}/**/index.js`))
+      this.patterns.map((pattern) => fg(`${pattern.replace(/\\/g, '/')}/**/*.js`))
     );
     return files.flat();
   }
@@ -71,15 +71,16 @@ export class RoutesGenerator {
       indexFiles.forEach((controllerPath) => {
         try {
           const content = readFileSync(controllerPath, 'utf-8');
-          const relativePath = controllerPath
-            .replace(/\\/g, '/')
-            // .replace(/\/index\.js$/, '')
-            // .replace(/\.js$/, '');
+          const relativePath = controllerPath.replace(/\\/g, '/');
 
           const methods = this.extractMethods(content);
 
           let relativeRoutePath = '/' + relativePath.split('/controllers/').pop();
-          relativeRoutePath = relativeRoutePath.replace(/\\/g, '/').replace(/\/index\.js$/, '').replace(/\.js$/, '');
+          relativeRoutePath = relativeRoutePath
+            .replace(/\\/g, '/')
+            .replace(/\/index\.js$/, '') // Remove index.js from the end
+            .replace(/\.js$/, '') // Remove the .js extension
+            .replace(/\[([^\]]+)\]/g, ':$1'); // Replace [param] with :param
 
           // Normalize path to check for duplicates
           const normalizedPath = this.normalizePath(relativeRoutePath);

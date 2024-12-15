@@ -7,7 +7,7 @@ export function ServiceCommand(program: Command): void {
     .command('service:make <name> [module]')
     .description('Create a new service')
     .action(async (name: string, module: string = 'main') => {
-      const content = fs.readFileSync(`${__dirname}/../../storage/stubs/service.stub`);
+      const content = fs.readFileSync(`${__dirname}/../../../storage/stubs/service.stub`);
 
       stub(`app/${module.toLowerCase()}/services/${name.toLowerCase()}.ts`, content.toString(), [
         { var: 'ClassName', value: name.replace(/^\w/, c => c.toUpperCase()) }

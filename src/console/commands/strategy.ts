@@ -23,9 +23,9 @@ export function StrategyCommand(program: Command): void {
     .command('strategy:make <name> [module]')
     .description('Create a new strategy pattern implementation with interface and concrete classes')
     .action(async (name: string, module: string = 'main') => {
-      const content = fs.readFileSync(`${__dirname}/../../storage/stubs/strategy.stub`);
-      const strategyAContent = fs.readFileSync(`${__dirname}/../../storage/stubs/strategy-a.stub`);
-      const interfaceContent = fs.readFileSync(`${__dirname}/../../storage/stubs/strategy-interface.stub`);
+      const content = fs.readFileSync(`${__dirname}/../../../storage/stubs/strategy.stub`);
+      const strategyAContent = fs.readFileSync(`${__dirname}/../../../storage/stubs/strategy-a.stub`);
+      const interfaceContent = fs.readFileSync(`${__dirname}/../../../storage/stubs/strategy-interface.stub`);
 
       // Create the strategy interface file
       stub(`app/${module.toLowerCase()}/strategies/${name.toLowerCase()}/IStrategy.ts`, interfaceContent.toString());

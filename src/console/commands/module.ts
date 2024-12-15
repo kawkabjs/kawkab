@@ -7,7 +7,7 @@ export function ModuleCommand(program: Command): void {
     .command('module:make <name>')
     .description('Create a new module')
     .action(async (name: string) => {
-      const content = fs.readFileSync(`${__dirname}/../../storage/stubs/module.stub`);
+      const content = fs.readFileSync(`${__dirname}/../../../storage/stubs/module.stub`);
 
       stub(`app/${name}/module.ts`, content.toString(), [
         { var: 'ItemName', value: name.toLowerCase()}
